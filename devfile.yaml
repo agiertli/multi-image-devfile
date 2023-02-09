@@ -22,30 +22,21 @@ components:
       image: registry.redhat.io/rhel8/postgresql-10:latest
       endpoints:
         - exposure: internal
-          targetPort: 3306
+          targetPort: 5432
           name: postgresql
           protocol: tcp
       env:
         - name: POSTGRESQL_USER
-          value: user
+          value: agiertli
         - name: POSTGRESQL_PASSWORD
-          value: pass
+          value: agiertli
         - name: POSTGRESQL_ROOT_PASSWORD
           value: root
         - name: POSTGRESQL_DATABASE
-          value: db
+          value: multi-image-test
       volumeMounts:
         - name: data
           path: /var/lib/mysql
   - name: data
     volume:
       size: 256Mi
-commands:
-  - id: build
-    exec:
-      component: tools
-      workingDir: ${PROJECTS_ROOT}/rosapocsecondservice
-      commandLine: mvn clean install
-      group:
-        kind: build
-        isDefault: true

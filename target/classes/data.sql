@@ -1,1 +1,0 @@
-insert into employees(id, first_name ,last_name, email_address) values('1','Anton','Giertli','jack@gmail.com');
