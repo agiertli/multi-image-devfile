@@ -25,6 +25,8 @@ components:
           targetPort: 5432
           name: postgresql
           protocol: tcp
+          attributes:
+            discoverable: true          
       env:
         - name: POSTGRESQL_USER
           value: agiertli
