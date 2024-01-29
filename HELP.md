@@ -7,6 +7,7 @@
 
 //commit
 
+/test/
 //commit
 
 //commit
